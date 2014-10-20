@@ -42,7 +42,7 @@ def index():
 
 @app.route('/titles/<title>')
 def individual_title(title):
-    return render_template("title.html")
+    return render_template("title.html", title = title)
 
 if __name__ == '__main__':
     app.debug = True
