@@ -25,13 +25,20 @@ def index():
             f.close()
     f=open('content.csv').readlines()
     #print [x[5] for x in f]
-    q = "INSERT INTO blogs VALUES(%(title)s,%(text)s,)"
+    q = "INSERT INTO blogs VALUES(%(title)s,%(text)s,%(month)s,%(day)s,%(year)s,%(hour)s,%(minute)s)"
     for x in csv.DictReader(open('content.csv')):
         q1 = q%x
+        print q1
+        c.execute(q1)
+
+    query = """
+    SELECT * titles
+      FROM blogs
+      """
     
+    conn.commit()
     
-    
-    return render_template("index.html", titles = [x.split(",")[5] for x in f])
+    return render_template("index.html", titles = c.execute(query))
 
 @app.route('/titles/<title>')
 def individual_title(title):
