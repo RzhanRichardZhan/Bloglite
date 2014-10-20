@@ -24,6 +24,11 @@
 	  <br><br><textarea cols="75" rows="8" placeholder="Your Text Goes Here!" name="text"></textarea>
           <br><br><button class="pure-button" name="submit" value="yes">Submit</button>
 	</form>
+	{% for x in titles %}
+	<h3><a href="/titles/{{x}}">{{x}}</a></h3>
+	<hr>
+	
+	{% endfor %}
     </div>
     <div class="pure-u-1-5"> </div>
 </div>
