@@ -1,12 +1,16 @@
 from flask import Flask, render_template, request
-import sqlite3, datetime
+import sqlite3, datetime, csv
 #let this be the main file
 
 app = Flask(__name__)
 
 conn = sqlite3.connect('test.db')
+
 c = conn.cursor()
-q="create table blogs (title UNIQUE text, post text)"
+q="drop table blogs"
+c.execute(q)
+conn.commit()
+q="create table blogs (title text UNIQUE, post text)"
 c.execute(q)
 conn.commit()
     
@@ -21,7 +25,7 @@ def index():
             text = form['text']
             f=open('content.csv','a')
             now = datetime.datetime.now()
-            f.write("%d,%d,%d,%d,%d,%s,%s\n"%(title,text,now.month,now.day,now.year,now.hour,now.minute)
+            f.write("%d,%d,%d,%d,%d,%s,%s\n"%(title,text,now.month,now.day,now.year,now.hour,now.minute))
             f.close()
     f=open('content.csv').readlines()
     #print [x[5] for x in f]
@@ -31,14 +35,12 @@ def index():
         print q1
         c.execute(q1)
 
-    query = """
-    SELECT * titles
-      FROM blogs
-      """
-    
+    query = "SELECT * titles FROM blogs"
+
+    q2=c.execute(query)
     conn.commit()
     
-    return render_template("index.html", titles = c.execute(query))
+    return render_template("index.html", titles =q2)
 
 @app.route('/titles/<title>')
 def individual_title(title):
