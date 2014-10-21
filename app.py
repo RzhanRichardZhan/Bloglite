@@ -7,8 +7,6 @@ app = Flask(__name__)
 conn = sqlite3.connect('test.db')
 
 
-
-
 @app.route('/', methods=["POST","GET"])
 def index():
     conn = sqlite3.connect('test.db')
@@ -33,7 +31,13 @@ def index():
 
 @app.route('/titles/<title>')
 def individual_title(title):
-    return render_template("title.html", title = title)
+    conn = sqlite3.connect('test.db')
+    c = conn.cursor()
+
+    query = "SELECT title, post FROM blogs"
+    q=[x[1] for x in c.execute(query)]
+    print q
+    return render_template("title.html", title = q)
 
 if __name__ == '__main__':
     app.debug = True
