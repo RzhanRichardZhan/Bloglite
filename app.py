@@ -25,7 +25,8 @@ def index():
             f.close()
     query = "SELECT title FROM blogs"
 
-    q=c.execute(query)
+    q=[x[0] for x in c.execute(query)]
+    print q
     conn.commit()
     
     return render_template("index.html", titles =q)
