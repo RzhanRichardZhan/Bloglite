@@ -48,6 +48,9 @@ h1 {
     font-size:30px;
 }
 
+p {
+    font-size:24px;
+}
 
 .pure-u-3-24 {
     background-image: url("/static/blue.jpg");

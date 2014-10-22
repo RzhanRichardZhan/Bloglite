@@ -29,6 +29,10 @@ def index():
 
     return render_template("index.html", titles =reversed(q))
 
+@app.route("/about")
+def about():
+    return render_template("about.html")
+
 @app.route('/title/<title>')
 def individual_title(title):
     conn = sqlite3.connect('test.db')
