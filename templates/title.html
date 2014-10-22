@@ -32,14 +32,24 @@
       </ul>
       </div>
 
-      <h2>{{titles[0][0]}}</h2>
+      
+    <h2>{{titles[0][0]}}</h2>
       <div class="timestamp">Posted {{titles[0][2]}}/{{titles[0][3]}}/{{titles[0][4]}} {{titles[0][5]}}:{{titles[0][6]}}</div>
       <hr><br>
       <p>{{titles[0][1]}}</p>
       <br>
-      
-      <br><br><textarea cols="90" rows="8" placeholder="Write a comment..." name="comment"></textarea>
-      <br><br><button class="pure-button" name="submit" value="yes">Submit</button>
+      <form class="pure-form" method="POST">
+	<br><br><textarea cols="90" rows="8" placeholder="Write a comment..." name="comment"></textarea>
+	<br><br><button class="pure-button" name="submit" value="yes">Submit</button>
+	</form>
+      <hr>
+    {% for x in comments %}
+    <p>
+      {{x[1]}}
+      <div class="timestamp">Posted {{x[2]}}/{{x[3]}}/{{x[4]}} {{x[5]}}:{{x[6]}}</div>
+    </p>
+    {% endfor %}
+    <hr>
 
       <hr>
       <center><a href="/">Bloglite</a></center>
