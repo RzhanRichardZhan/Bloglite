@@ -6,9 +6,9 @@ specific font stacks to ensure the greatest OS/browser compatibility.
 #banner {
     position: absolute;
     top: 0px;
-    left: 0px;
+    left: 100px;
     right: 0px;
-    width: 100%;
+    width: 80%;
     height: 200px;
     z-index: -1;
 }
@@ -45,14 +45,10 @@ html, button, input, select, textarea,
 }
 
 h1 {
-    font-size:40px;
-    text-align: center;
+    font-size:30px;
 }
 
-.pure-u-1-24 {
-    background-color:blue;
-}
 
-.pure-u-2-3 {
+.pure-u-3-24 {
     background-image: url("/static/blue.jpg");
 }
