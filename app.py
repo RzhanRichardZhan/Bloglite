@@ -21,23 +21,23 @@ def index():
             f.write("%s,%s,%d,%d,%d,%d,%d\n"%(title,text,now.month,now.day,now.year,now.hour,now.minute))
             c.execute("INSERT INTO blogs VALUES ('%s','%s',%d,%d,%d,%d,%d);"%(title,text,now.month,now.day,now.year,now.hour,now.minute))
             f.close()
-    query = "SELECT title FROM blogs"
+    query = "SELECT * FROM blogs"
 
-    q=[x[0] for x in c.execute(query)]
+    q=[x for x in c.execute(query)]
     print q
     conn.commit()
-    
-    return render_template("index.html", titles =q)
 
-@app.route('/titles/<title>')
+    return render_template("index.html", titles =reversed(q))
+
+@app.route('/title/<title>')
 def individual_title(title):
     conn = sqlite3.connect('test.db')
     c = conn.cursor()
 
-    query = "SELECT title, post FROM blogs"
-    q=[x[1] for x in c.execute(query)]
+    query = "SELECT * FROM blogs WHERE title =\'" + title +"\'"
+    q=[x for x in c.execute(query)]
     print q
-    return render_template("title.html", title = q)
+    return render_template("title.html", titles = q)
 
 if __name__ == '__main__':
     app.debug = True

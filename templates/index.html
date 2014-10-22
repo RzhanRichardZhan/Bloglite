@@ -11,6 +11,7 @@
 <!--[if gt IE 8]><!-->
     <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/grids-responsive-min.css">
 <!--<![endif]-->
+<<<<<<< HEAD
 
 </head>
 
@@ -35,6 +36,44 @@
         <li><a href="http://tumblr.com">Tumblr</a></li>
         <li><a href="http://facebook.com">Facebook</a></li>
       </ul>
+=======
+<style>
+  a {
+    text-decoration: none;
+  }
+
+  .timestamp{
+    font-size: 12;
+    color: #666666;
+  }
+
+  .pure-u-1-5{
+  }
+</style> {# how to change color of col #}
+
+<div class="pure-g">
+    <div class="pure-u-1-5"></div>
+    <div class="pure-u-3-5">
+	<form class="pure-form" method="POST">
+	  <h1>Bloglite</h1>
+    <hr>
+    <h3>Create a post!</h3>
+	  <input type="text" size="75" placeholder="Title" name="title"></input>
+	  <br><br><textarea cols="75" rows="8" placeholder="Your Text Goes Here!" name="text"></textarea>
+          <br><br><button class="pure-button" name="submit" value="yes">Submit</button>
+	</form>
+  <br>
+  <h3>Recent Posts</h3>
+  <hr>
+	{% for x in titles %}
+	<p>
+    <a href="/title/{{x[0]}}">{{x[0]}}</a>
+    <div class="timestamp">Posted {{x[2]}}/{{x[3]}}/{{x[4]}} {{x[5]}}:{{x[6]}}</div>
+  </p>
+	<hr>
+
+	{% endfor %}
+>>>>>>> b3e834ef781e51d37dea86dc82931f71911fb05e
     </div>
 
     <h1>Bloglite</h1>
