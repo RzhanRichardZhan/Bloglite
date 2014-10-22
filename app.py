@@ -13,7 +13,7 @@ def index():
     c = conn.cursor()
     if request.method == "POST":
         form = request.form
-        if form['submit'] == 'yes':
+        if form['submit'] == 'yes' and form['title']!='' and form['text']!='':
             title = form['title']
             text = form['text']
             f=open('content.csv','a')
