@@ -45,16 +45,15 @@
       <br><br><button class="pure-button" name="submit" value="yes">Submit</button>
     </form>
     
-    {% for x in titles %}
-    <section class="post">
-      <header class="post-header">
-	Date goes here
-      </header>
-    </section>
-    
-    <h3><a href="/titles/{{x}}">{{x}}</a></h3>
+    <h3>Recent Posts</h3>
     <hr>
-    {% endfor %}
+    {% for x in titles %}
+    <p>
+      <a href="/title/{{x[0]}}">{{x[0]}}</a>
+      <div class="timestamp">Posted {{x[2]}}/{{x[3]}}/{{x[4]}} {{x[5]}}:{{x[6]}}</div>
+    </p>
+    <hr>
+    
   </div>
   <div class="pure-u-1-24"></div>
 </div>

@@ -13,9 +13,21 @@ specific font stacks to ensure the greatest OS/browser compatibility.
     z-index: -1;
 }
 
+.timestamp{
+    font-size: 12;
+    color: #666666;
+  }
+
 html, button, input, select, textarea,
 .pure-g [class *= "pure-u"] {
     font-family: Georgia, Times,"Times New Roman",serif;
+}
+
+
+.sidebar {
+    text-align: center;
+    color: #99FFCC;
+    background-image: url("/static/blue.jpg");
 }
 
 .pure-button {
