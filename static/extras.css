@@ -1,0 +1,57 @@
+/*
+When setting the primary font stack, apply it to the Pure grid units along
+with `html`, `button`, `input`, `select`, and `textarea`. Pure Grids use
+specific font stacks to ensure the greatest OS/browser compatibility.
+*/
+#banner {
+    position: absolute;
+    top: 0px;
+    left: 100px;
+    right: 0px;
+    width: 80%;
+    height: 200px;
+    z-index: -1;
+}
+
+.timestamp{
+    font-size: 12;
+    color: #666666;
+  }
+
+html, button, input, select, textarea,
+.pure-g [class *= "pure-u"] {
+    font-family: Georgia, Times,"Times New Roman",serif;
+}
+
+
+.sidebar {
+    text-align: center;
+    color: #99FFCC;
+    background-image: url("/static/blue.jpg");
+}
+
+.pure-button {
+    text-align: center;
+}
+
+.nav-list {
+    text-align: right;
+}
+.pure-button:hover {
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #c62d1f), color-stop(1, #f24537) );
+	background:-moz-linear-gradient( center top, #c62d1f 5%, #f24537 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#c62d1f', endColorstr='#f24537');
+
+}
+
+h1 {
+    font-size:30px;
+}
+
+p {
+    font-size:24px;
+}
+
+.pure-u-3-24 {
+    background-image: url("/static/blue.jpg");
+}
