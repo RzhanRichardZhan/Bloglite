@@ -22,13 +22,13 @@
 <div class="pure-g">
   <div class="pure-u-1-24"></div>
   <div class="pure-u-22-24">
-    
+
     <img id="banner" src="/static/BLOG_BANNER.jpg" alt="Banner Image"/>
 
     <br><br><br><br><br><br><br><br><br><br><br><br>
     <div class="pure-menu pure-menu-open pure-menu-horizontal">
       <a href="#" class="pure-menu-heading">BLOGLITE</a>
-      
+
       <ul>
         <li class="pure-menu-selected"><a href="/">Home</a></li>
         <li><a href="/about">About</a></li>
@@ -44,7 +44,7 @@
       <br><br><textarea cols="75" rows="8" placeholder="Your Text Goes Here!" name="text"></textarea>
       <br><br><button class="pure-button" name="submit" value="yes">Submit</button>
     </form>
-    
+
     <h3>Recent Posts</h3>
     <hr>
     {% for x in titles %}
@@ -52,8 +52,9 @@
       <a href="/title/{{x[0]}}">{{x[0]}}</a>
       <div class="timestamp">Posted {{x[2]}}/{{x[3]}}/{{x[4]}} {{x[5]}}:{{x[6]}}</div>
     </p>
+    {% endfor %}
     <hr>
-    
+
   </div>
   <div class="pure-u-1-24"></div>
 </div>
