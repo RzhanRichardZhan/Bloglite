@@ -5,11 +5,13 @@ def creat():
     q1=""
     try:
         c.execute("create table blogs (title text UNIQUE, post text, month integer, day integer, year integer, hour integer, minute integer)")
-        c.execute("create table comments (title text, comment text, month integer, day integer, year integer, hour integer, minute integer)")
     except:
         c.execute("drop table blogs")
-        c.execute("drop table comments")
         c.execute("create table blogs (title text UNIQUE, post text, month integer, day integer, year integer, hour integer, minute integer)")
+    try:
+        c.execute("create table comments (title text, comment text, month integer, day integer, year integer, hour integer, minute integer)")
+    except:
+        c.execute("drop table comments")
         c.execute("create table comments (title text, comment text, month integer, day integer, year integer, hour integer, minute integer)")
         
     conn.commit()
