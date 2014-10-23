@@ -1,9 +1,9 @@
 <!doctype html>
 <html>
 </head>
-
-<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/pure-min.css">
 <link rel="stylesheet" href="/static/extras.css">
+<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/pure-min.css">
+
 
 
 <!--[if lte IE 8]>
@@ -19,11 +19,11 @@
     <div class="pure-u-1-24"></div>
     <div class="pure-u-16-24">
       <img id="banner" src="/static/BLOG_BANNER.jpg" alt="Banner Image"/>
-    
+
     <br><br><br><br><br><br><br><br><br><br><br><br>
     <div class="pure-menu pure-menu-open pure-menu-horizontal">
 	<a href="/" class="pure-menu-heading">BLOGLITE</a>
-      
+
       <ul>
         <li class="pure-menu-selected"><a href="/">Home</a></li>
         <li><a href="/about">About</a></li>
@@ -32,21 +32,22 @@
       </ul>
       </div>
 
-      
+
     <h2>{{titles[0][0]}}</h2>
-      <div class="timestamp">Posted {{titles[0][2]}}/{{titles[0][3]}}/{{titles[0][4]}} {{titles[0][5]}}:{{titles[0][6]}}</div>
-      <hr><br>
+      <div class="timestamp">posted {{titles[0][2]}}/{{titles[0][3]}}/{{titles[0][4]}} {{titles[0][5]}}:{{titles[0][6]}}</div>
+      <hr>
       <p>{{titles[0][1]}}</p>
       <br>
+      <hr>
       <form class="pure-form" method="POST">
-	<br><br><textarea cols="90" rows="8" placeholder="Write a comment..." name="comment"></textarea>
+	<textarea cols="90" rows="8" placeholder="Comment on this post" name="comment"></textarea>
 	<br><br><button class="pure-button" name="submit" value="yes">Submit</button>
 	</form>
       <hr>
     {% for x in comments %}
     <p>
       {{x[1]}}
-      <div class="timestamp">Posted {{x[2]}}/{{x[3]}}/{{x[4]}} {{x[5]}}:{{x[6]}}</div>
+      <div class="timestamp">posted {{x[2]}}/{{x[3]}}/{{x[4]}} {{x[5]}}:{{x[6]}}</div>
     </p>
     {% endfor %}
     <hr>
@@ -54,7 +55,7 @@
       <hr>
       <center><a href="/">Bloglite</a></center>
     </div>
-  
+
   <div class="pure-u-1-24"></div>
   <div class="pure-u-3-24"></div>
 

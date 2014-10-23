@@ -14,15 +14,13 @@ specific font stacks to ensure the greatest OS/browser compatibility.
 }
 
 .timestamp{
-    font-size: 12;
+    font-size: 12px;
     color: #666666;
   }
 
 html, button, input, select, textarea,
 .pure-g [class *= "pure-u"] {
-    font-family: Georgia, Times,"Times New Roman",serif;
 }
-
 
 .sidebar {
     text-align: center;
@@ -44,12 +42,20 @@ html, button, input, select, textarea,
 
 }
 
+p,h1,h2,h3,h4,h5,h6{
+    font-family: Verdana, Times, Georgia, serif;
+}
+
+a {
+  text-decoration:none;
+}
+
 h1 {
     font-size:30px;
 }
 
 p {
-    font-size:24px;
+    font-size:16px;
 }
 
 .pure-u-3-24 {
